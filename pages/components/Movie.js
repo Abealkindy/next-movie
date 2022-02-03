@@ -1,11 +1,9 @@
 import React from "react";
-import Hello from "./Router";
 import styles from "/styles/Home.module.css";
-const IMAGE_POSTER = "http://image.tmdb.org/t/p/w185";
+import Link from 'next/link'
+const IMAGE_POSTER = "http://image.tmdb.org/t/p/w1280";
 const IMAGE_BACKDROP = "http://image.tmdb.org/t/p/w780";
 const IMAGE_BIASA = "http://image.tmdb.org/t/p/w1280";
-const DETAIL_URL = "http://api.themoviedb.org/3/movie/";
-
 const Movie = ({
   title,
   poster_path,
@@ -17,17 +15,17 @@ const Movie = ({
   return (
     <div className={styles.card}>
       <div className="movie" align="center">
-        <img src={IMAGE_BACKDROP + poster_path} height="150px" />
+        <img src={IMAGE_BIASA + poster_path} height="150px" />
         <br />
 
-        <a href={DETAIL_URL + id + "?api_key=1b0b39b7699af0ca010cd87d9e6de6c8"}>
+        <Link href={`/detail/${id}`}>
           {title}
-        </a>
+        </Link>
         <br />
         <br />
         <span>{release_date}</span>
         <br />
-        <span>{"Rating: " + vote_average}</span>
+        <span>{vote_average + '/10'}</span>
       </div>
     </div>
   );
