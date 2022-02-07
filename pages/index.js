@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Movie from "./components/Movie";
 import React, { useState, useEffect } from "react";
@@ -62,6 +63,10 @@ export default function Home() {
   };
   return (
     <div className={styles.container} align="center">
+      <Head>
+        <title>Movie Next App</title>
+        <meta name="description" content="Movie next page" />
+      </Head>
       <div>
         <h1>MOVIE SEARCH</h1>
       </div>
